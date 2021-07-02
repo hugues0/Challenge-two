@@ -1,4 +1,4 @@
-import React, { Component, Suspense } from "react";
+import React, { Component } from "react";
 import "./App.css";
 import Search from "./components/Search";
 import Loader from "react-loader-spinner";
@@ -26,20 +26,21 @@ class App extends Component {
   render() {
     const { photos, loading } = this.state;
     return (
-      <div style={{textAlign:"center"}}>
-        <Search searchHandle={this.onClickHandle} />
+      <div className="photos-wrapper">
+        <div className="content-holder">
+          <Search searchHandle={this.onClickHandle} />
 
-        {( loading) ? (
-          
-          <Loader type="Oval" color="brown" height={300} width={300} />
-        ) : (
-          photos.map((photo) => (
-            <div className="picture-container" key={photo.id}>
-              <img src={photo.thumbnailUrl} alt={photo.title} />
-              <label>{photo.title}</label>
-            </div>
-          ))
-        )}
+          {loading ? (
+            <Loader type="Oval" color="brown" height={300} width={300} />
+          ) : (
+            photos.map((photo) => (
+              <div className="picture-container" key={photo.id}>
+                <img src={photo.thumbnailUrl} alt={photo.title} />
+                <label>{photo.title}</label>
+              </div>
+            ))
+          )}
+        </div>
       </div>
     );
   }

@@ -15,10 +15,18 @@ function Search(props){
 
    
 return (
-
   <div>
-    <input type="text" placeholder="Enter album ID" onChange={onChangeHandle} value={albumId} name="albumId"></input>
-    <button onClick={()=>props.searchHandle(albumId)}>Get photos By</button>
+    <input
+      type="text"
+      placeholder="Enter album ID"
+      onChange={onChangeHandle}
+      value={albumId}
+      name="albumId"
+      className="input-box"
+    ></input>
+    <button onClick={() => props.searchHandle(albumId)} className="btn">
+      Get photos By
+    </button>
   </div>
 );
 }
