@@ -25,7 +25,7 @@ return (
       className="input-box"
     ></input>
     <button onClick={() => props.searchHandle(albumId)} className="btn">
-      Get photos By
+      Get photos By ID
     </button>
   </div>
 );

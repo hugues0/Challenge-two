@@ -31,7 +31,7 @@ class App extends Component {
           <Search searchHandle={this.onClickHandle} />
 
           {loading ? (
-            <Loader type="Oval" color="brown" height={300} width={300} />
+            <Loader type="Oval" color="black" height={50} width={50} />
           ) : (
             photos.map((photo) => (
               <div className="picture-container" key={photo.id}>
